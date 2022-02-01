@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./pages/Home";
 
 const App = () => {
-  return (
-      <div>
-          <h1>Impulcomerce</h1>
-      </div>
-  );
+    return (
+      <>
+        <NavBar />
+        <Home />
+        <Footer/>
+        </>
+    );
 };
 
 export default App;
