@@ -1,23 +1,40 @@
 import React from "react";
-// import img from "/images/logo512.png";
+import img1 from "../../assets/images/image_4.jpg";
+import img2 from "../../assets/images/image_2.jpg";
+import img3 from "../../assets/images/image_3.jpg";
 
 const Carousel = () => {
-    const img = "/logo512.png";
+    
     return (
         <div
             id="carouselExampleControls"
-            className="carousel slide h-25 w-100"
+            className="carousel slide"
             data-bs-ride="carousel"
         >
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={img} className="d-block " alt="..." />
+                    <img
+                        src="http://placekitten.com/1600/600"
+                        className="d-block "
+                        alt="..."
+                        style={{ height: "200px", width: "100%" }}
+                    />
                 </div>
                 <div className="carousel-item">
-                    <img src={img} className="d-block " alt="..." />
+                    <img
+                        src={img2}
+                        className="d-block "
+                        alt="..."
+                        style={{ height: "200px", width: "100%" }}
+                    />
                 </div>
                 <div className="carousel-item">
-                    <img src={img} className="d-block " alt="..." />
+                    <img
+                        src={img3}
+                        className="d-block "
+                        alt="..."
+                        style={{ height: "200px", width: "100%" }}
+                    />
                 </div>
             </div>
             <button
