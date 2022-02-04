@@ -1,15 +1,13 @@
-import React from "react";
-import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import Home from "./pages/Home";
+import React from 'react';
+import { Provider } from 'react-redux';
+import AuthRouter from './routes/AuthRouter';
+import { store } from './store/store';
 
 const App = () => {
     return (
-      <>
-        <NavBar />
-        <Home />
-        <Footer/>
-        </>
+        <Provider store={store}>
+          <AuthRouter/>
+        </Provider>
     );
 };
 

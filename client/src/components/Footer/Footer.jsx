@@ -12,17 +12,17 @@ const Footer = () => {
                 }}
             >
                 <div className="col-md-4">
-                    <h6 class="navbar-text ">
+                    <h6 className="navbar-text ">
                         Navbar text with an inline element
                     </h6>
                 </div>
                 <div className="col-md-4">
-                    <h6 class="navbar-text ">
+                    <h6 className="navbar-text ">
                         Navbar text with an inline element
                     </h6>
                 </div>
                 <div className="col-md-4">
-                    <h6 class="navbar-text ">
+                    <h6 className="navbar-text ">
                         Navbar text with an inline element
                     </h6>
                 </div>
