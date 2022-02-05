@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -7,7 +8,7 @@ const NavBar = () => {
             style={{ backgroundColor: "#450EB5" }}
         >
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <NavLink className="navbar-brand" to="/" end>
                     <img
                         src="/docs/5.1/assets/brand/bootstrap-logo.svg"
                         alt=""
@@ -16,7 +17,7 @@ const NavBar = () => {
                         className="d-inline-block align-text-top"
                     />
                     Impulcomerce
-                </a>
+                </NavLink>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -31,39 +32,67 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav col-10">
                         <li className="nav-item">
-                            <a
-                                className="nav-link active"
-                                aria-current="page"
-                                href="#"
+                            <NavLink
+                                to="/"
+                                className={(isActive) =>
+                                    "nav-link" +
+                                    (!isActive ? " unselected" : "")
+                                }
+                                style={{ textDecoration: "none" }}
+                                end
                             >
                                 Inicio
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <NavLink
+                                to="/contac"
+                                className={(isActive) =>
+                                    "nav-link" +
+                                    (!isActive ? " unselected" : "")
+                                }
+                                style={{ textDecoration: "none" }}
+                            >
                                 Contacto
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <NavLink
+                                to="/about"
+                                className={(isActive) =>
+                                    "nav-link" +
+                                    (!isActive ? " unselected" : "")
+                                }
+                                style={{ textDecoration: "none" }}
+                            >
                                 Acerca de
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a
-                                className="nav-link active"
-                                aria-current="page"
-                                href="#"
+                            <NavLink
+                                to="/login"
+                                className={(isActive) =>
+                                    "nav-link" +
+                                    (!isActive ? " unselected" : "")
+                                }
+                                style={{ textDecoration: "none" }}
                             >
                                 Ingreso
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <NavLink
+                                to="/register"
+                                className={(isActive) =>
+                                    "nav-link" +
+                                    (!isActive ? " unselected" : "")
+                                }
+                                style={{ textDecoration: "none" }}
+                            >
                                 Registro
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>

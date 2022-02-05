@@ -1,34 +1,26 @@
 import React from 'react';
 
-const inputs = [
-    {
-        type: 'email',
-        id: 'floatingInput',
-        placeholder: 'name@example.com',
-        text: 'Correo Electronico',
-    },
-    {
-        type: 'password',
-        id: 'floatingPassword',
-        placeholder: 'Password',
-        text: 'Contraseña',
-    },
-];
+import {inputs} from './elements';
+
 
 const RegistroClientes = () => {
     return (
-        <div className="container">
-            {inputs.map((input, index) => (
-                <div key={index} className="form-floating mb-3">
-                    <input
-                        type={input.type}
-                        className="form-control"
-                        id={input.id}
-                        placeholder={input.placeholder}
-                    />
-                    <label htmlFor="floatingInput">{input.text} </label>
+        <div className="d-flex justify-content-center m-3">
+            <div className="text-end w-75" >
+                <div className="row">
+                    {inputs.map((input, index) => (
+                        <div key={index} className="form-floating mb-3 col-md-4">
+                            <input
+                                type={input.type}
+                                className="form-control"
+                                id={input.id}
+                                placeholder={input.placeholder}
+                            />
+                            <label className='m-2' htmlFor="floatingInput">{input.text} </label>
+                        </div>
+                    ))}
                 </div>
-            ))}
+            </div>
         </div>
     );
 };
