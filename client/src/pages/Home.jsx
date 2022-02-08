@@ -1,48 +1,12 @@
-import React, { useState, useEffect } from 'react';
-
-import Axios from 'axios';
 
 import Card from '../components/Card/Card';
 import Carousel from '../components/Carousel/Carousel';
 import SearchBar from '../components/SearchBar/SearchBar';
 import Spinner from '../components/Spinner/Spinner';
+import { useHome } from '../hooks/useHome';
 
 const Home = () => {
-    const [emprendedores, setEmprendedores] = useState(null);
-    const [imagenes, setImagenes] = useState(null);
-
-    const loadProveedores = async (param) => {
-        await Axios.post('/user/filter/', param)
-            .then((response) => {
-                setEmprendedores(response.data.proveedores);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        return emprendedores;
-    };
-
-    useEffect(() => {
-        async function getEmprendedores() {
-            if (!emprendedores) {
-                try {
-                    const response = await Axios({
-                        method: 'get',
-                        url: `/user/visible`,
-                        responseType: 'json',
-                    });
-                    setEmprendedores(response.data.proveedores);
-
-                    setImagenes(imagenes ?? response.data.proveedores);
-
-                    return emprendedores;
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-        }
-        getEmprendedores();
-    });
+    const [emprendedores, loadProveedores] = useHome()
 
     return (
         <>
