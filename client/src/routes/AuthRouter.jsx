@@ -7,6 +7,7 @@ import ContactoScreen from '../pages/ContactoScreen';
 import AboutScreen from '../pages/AboutScreen';
 import LoginScreen from '../pages/LoginScreen';
 import RegisterScreen from '../pages/RegisterScreen';
+import ProveedorScreen from '../pages/ProveedorScreen';
 
 const AuthRouter = () => {
     return (
@@ -18,6 +19,7 @@ const AuthRouter = () => {
                 <Route end path="about" element={<AboutScreen />} />
                 <Route end path="login" element={<LoginScreen />} />
                 <Route end path="register" element={<RegisterScreen />} />
+                <Route end path="/card/:id" element={<ProveedorScreen />} />
             </Routes>
             <Footer />
         </Router>

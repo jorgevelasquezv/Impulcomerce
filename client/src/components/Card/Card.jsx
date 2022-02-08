@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { URL } from '../../libs/url';
 
 const Card = ({ data }) => {
@@ -15,9 +16,7 @@ const Card = ({ data }) => {
                 <p className="card-text">Ciudad: {ciudad}</p>
                 <p className="card-text">Actividad: {actividad}</p>
                 <p className="card-text">Likes: {likes}</p>
-                <a href="#" className="">
-                    Ver mas...
-                </a>
+                <Link to={`/card/${_id}`}>Ver mas...</Link>
             </div>
         </div>
     );
