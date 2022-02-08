@@ -1,73 +1,72 @@
-import React, { useState } from 'react';
+import React from "react";
 
-import { Categorias, Ciudades, Departamentos } from '../../libs/search.lib';
+import SelectData from "../SelectData/SelectData";
 
 const SearchBar = () => {
-
-    const [departamento, setDepartamento] = useState(0);
-
-    const handleDepartamento = (e) =>
-    {
-        setDepartamento(Departamentos.indexOf(e.target.value));
-    };
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target[0].value);
         console.log(e.target[1].value);
         console.log(e.target[2].value);
         console.log(e.target[3].value);
+        console.log(e.target[4].value);
     };
 
     return (
-        <div className="container-fluid" style={{ backgroundColor: '#450EB5' }}>
-            <form
-                className="d-flex p-2"
-                onSubmit={handleOnSubmit}
-                style={{ backgroundColor: '#450EB5' }}
+        <form onSubmit={handleOnSubmit} style={{ backgroundColor: "#450EB5" }}>
+            <nav
+                className="navbar sticky-top navbar-expand-lg navbar-dark"
+                style={{ backgroundColor: "#450EB5" }}
             >
-                <select className="form-select me-2" aria-label="Actividad">
-                    {Categorias.map((categoria, index) => (
-                        <option key={index} defaultValue={categoria.length + 1}>
-                            {categoria}
-                        </option>
-                    ))}
-                </select>
-                <select
-                    className="form-select me-2"
-                    aria-label="Departamento"
-                    onChange={handleDepartamento}
-                >
-                    {Departamentos.map((departamento, index) => (
-                        <option
-                            key={index}
-                            defaultValue={departamento.length + 1}
+                <div className="container">
+                    <div className="row">
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
                         >
-                            {departamento}
-                        </option>
-                    ))}
-                </select>
-                <select className="form-select me-2" aria-label="Ciudad" disabled={departamento === 0}>
-                    {Ciudades[departamento].map((ciudad, index) => (
-                        <option key={index} defaultValue={ciudad.length + 1}>
-                            {ciudad}
-                        </option>
-                    ))}
-                </select>
-                <input
-                    className="form-control me-2 flex-grow-1"
-                    type="search"
-                    placeholder="Buscar"
-                    aria-label="Search"
-                />
-                <button
-                    className="btn btn-dark"
-                    type="submit"
-                    style={{ backgroundColor: '#450EB5' }}
-                >
-                    Search
-                </button>
-            </form>
-        </div>
+                            <span className="navbar-toggler-icon" />
+                        </button>
+                        <div
+                            className="collapse navbar-collapse"
+                            id="navbarNavAltMarkup"
+                        >
+                            <div className="navbar-nav">
+                                <div className="row p-2">
+                                    <div className="col-lg-8 ">
+                                        <div className="row">
+                                            <SelectData />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4">
+                                        <div className="row">
+                                            <input
+                                                className="form-floating me-3 col-auto"
+                                                type="search"
+                                                placeholder="Buscar"
+                                                aria-label="Search"
+                                            />
+                                            <button
+                                                className="btn btn-dark col-lg-2"
+                                                type="submit"
+                                                style={{
+                                                    backgroundColor: "#450EB5",
+                                                }}
+                                            >
+                                                Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </form>
     );
 };
 

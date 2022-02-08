@@ -26,7 +26,49 @@ export const inputs = [
     {
         type: "number",
         id: "floatingPhone",
-        placeholder: "Phone",
-        text: "Telefono",
+        placeholder: "Phone 1",
+        text: "Telefono 1",
+    },
+    {
+        type: "number",
+        id: "floatingPhone2",
+        placeholder: "Phone 2",
+        text: "Telefono 2",
+    },
+    {
+        type: "text",
+        id: "floatingWhatsApp",
+        placeholder: "WhatsApp",
+        text: "WhatApp",
+    },
+    {
+        type: "text",
+        id: "floatingTelegram",
+        placeholder: "Telegram",
+        text: "Telegram",
+    },
+    {
+        type: "text",
+        id: "floatingFacebook",
+        placeholder: "Facebook",
+        text: "Facebook",
+    },
+    {
+        type: "text",
+        id: "floatingInstagram",
+        placeholder: "Instagram",
+        text: "Instagram",
+    },
+    {
+        type: "text",
+        id: "floatingTwitter",
+        placeholder: "Twitter",
+        text: "Twitter",
+    },
+    {
+        type: "text",
+        id: "floatingLinkedIn",
+        placeholder: "LinkedIn",
+        text: "LinkedIn",
     },
 ];

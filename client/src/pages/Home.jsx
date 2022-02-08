@@ -14,7 +14,20 @@ const Home = () => {
         <>
             <Carousel />
             <SearchBar />
-        <Card data={data}/>
+            <div className="container">
+                <div className="row">
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                    <Card data={data} />
+                </div>
+            </div>
         </>
     );
 };

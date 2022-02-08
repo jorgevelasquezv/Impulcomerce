@@ -7,8 +7,8 @@ const Card = ({ data }) => {
     const uri = URL + `/proveedor/imagen/`;
 
     return (
-        <div className="card" style={{ width: '18rem' }}>
-            <img src={`${uri}${id}`} className="card-img-top" alt="..." />
+        <div className="card col-auto mt-3 ms-3" style={{ width: '19rem' }}>
+            <img src={`${uri}${id}`} className="card-img-top" alt={id} />
             <div className="card-body">
                 <h5 className="card-title">{tittle} </h5>
                 <p className="card-text">{text}</p>
