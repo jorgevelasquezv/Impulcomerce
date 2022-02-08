@@ -1,31 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import Axios from 'axios';
+
 import Card from '../components/Card/Card';
 import Carousel from '../components/Carousel/Carousel';
 import SearchBar from '../components/SearchBar/SearchBar';
+import Spinner from '../components/Spinner/Spinner';
 
 const Home = () => {
+    const [emprendedores, setEmprendedores] = useState(null);
+    const [imagenes, setImagenes] = useState(null);
 
-  const data = {
-      tittle: 'Titulo',
-      text: 'Texto',
-      id: '61b21e5a960f9baae8e3ab80',
-  };
+    const loadProveedores = async (param) => {
+        await Axios.post('/user/filter/', param)
+            .then((response) => {
+                setEmprendedores(response.data.proveedores);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        return emprendedores;
+    };
+
+    useEffect(() => {
+        async function getEmprendedores() {
+            if (!emprendedores) {
+                try {
+                    const response = await Axios({
+                        method: 'get',
+                        url: `/user/visible`,
+                        responseType: 'json',
+                    });
+                    setEmprendedores(response.data.proveedores);
+
+                    setImagenes(imagenes ?? response.data.proveedores);
+
+                    return emprendedores;
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+        getEmprendedores();
+    });
+
     return (
         <>
             <Carousel />
-            <SearchBar />
+            <SearchBar loadProveedores={loadProveedores} />
             <div className="container">
                 <div className="row">
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
-                    <Card data={data} />
+                    {emprendedores ?
+                        emprendedores.map((emprendedor) => (
+                            <Card key={emprendedor._id} data={emprendedor} />
+                        )) : <Spinner />}
                 </div>
             </div>
         </>

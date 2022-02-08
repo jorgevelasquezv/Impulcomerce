@@ -1,72 +1,61 @@
-import React from "react";
+import React from 'react';
 
-import SelectData from "../SelectData/SelectData";
+import SelectData from '../SelectData/SelectData';
 
-const SearchBar = () => {
+const SearchBar = ({loadProveedores}) => {
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target[1].value);
-        console.log(e.target[2].value);
-        console.log(e.target[3].value);
-        console.log(e.target[4].value);
+
+        const actividad = e.target[0].value === 'Categorias' ? '' : e.target[0].value;
+        const departamento = e.target[1].value === 'Departamentos' ? '' : e.target[1].value;
+        const ciudad = e.target[2].value === 'Ciudades' ? '' : e.target[2].value;
+        const nombre = e.target[3].value;
+        const param = {
+            actividad,
+            departamento,
+            ciudad,
+            nombre,
+        };
+        loadProveedores(param);
     };
 
     return (
-        <form onSubmit={handleOnSubmit} style={{ backgroundColor: "#450EB5" }}>
-            <nav
-                className="navbar sticky-top navbar-expand-lg navbar-dark"
-                style={{ backgroundColor: "#450EB5" }}
-            >
-                <div className="container">
-                    <div className="row">
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup"
-                            aria-controls="navbarNavAltMarkup"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span className="navbar-toggler-icon" />
-                        </button>
-                        <div
-                            className="collapse navbar-collapse"
-                            id="navbarNavAltMarkup"
-                        >
-                            <div className="navbar-nav">
-                                <div className="row p-2">
-                                    <div className="col-lg-8 ">
-                                        <div className="row">
-                                            <SelectData />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4">
-                                        <div className="row">
-                                            <input
-                                                className="form-floating me-3 col-auto"
-                                                type="search"
-                                                placeholder="Buscar"
-                                                aria-label="Search"
-                                            />
-                                            <button
-                                                className="btn btn-dark col-lg-2"
-                                                type="submit"
-                                                style={{
-                                                    backgroundColor: "#450EB5",
-                                                }}
-                                            >
-                                                Search
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <div
+            className="row sticky-top"
+            style={{ backgroundColor: '#450EB5', top: '55px' }}
+        >
+            <form onSubmit={handleOnSubmit}>
+                <div className="row mt-3 me-1 ms-1">
+                    <div className="col-lg-8">
+                        <div className="row">
+                            <SelectData />
+                        </div>
+                    </div>
+
+                    <div className="col-lg-4">
+                        <div className="input-group mb-3">
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Buscar"
+                                aria-label="Buscar"
+                                aria-describedby="button-addon2"
+                            />
+                            <button
+                                className="btn btn-dark"
+                                type="submit"
+                                id="button-addon2"
+                                style={{
+                                    backgroundColor: '#450EB5',
+                                }}
+                            >
+                                Buscar
+                            </button>
                         </div>
                     </div>
                 </div>
-            </nav>
-        </form>
+            </form>
+        </div>
     );
 };
 

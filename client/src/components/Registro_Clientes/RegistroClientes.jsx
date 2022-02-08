@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { inputs } from "./elements";
-import SelectData from "../SelectData/SelectData";
+import { inputs } from './elements';
+import SelectData from '../SelectData/SelectData';
 
 const RegistroClientes = () => {
     const handleSubmit = (e) => {
@@ -52,8 +52,8 @@ const RegistroClientes = () => {
                             className="form-control"
                             placeholder="Ingrese un mensaje descriptivo de su actividad"
                             id="floatingTextarea"
-                            defaultValue={""}
-                            style={{ height: "160px" }}
+                            defaultValue={''}
+                            style={{ height: '160px' }}
                         />
                         <label htmlFor="floatingTextarea">
                             Ingrese un mensaje descriptivo de su actividad

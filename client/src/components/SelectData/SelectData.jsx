@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Categorias, Ciudades, Departamentos } from "../../libs/search.lib";
+import { Categorias, Ciudades, Departamentos } from '../../libs/search.lib';
 
 const SelectData = () => {
-       const [departamento, setDepartamento] = useState(0);
+    const [departamento, setDepartamento] = useState(0);
 
-       const handleDepartamento = (e) => {
-           setDepartamento(Departamentos.indexOf(e.target.value));
-       };
+    const handleDepartamento = (e) => {
+        setDepartamento(Departamentos.indexOf(e.target.value));
+    };
     return (
         <>
-            <div className="mb-3 col-lg-4">
+            <div className="col-lg-4 mb-sm-3">
                 <select className="form-select " aria-label="Actividad">
                     {Categorias.map((categoria, index) => (
                         <option key={index} defaultValue={categoria.length + 1}>
@@ -18,7 +18,7 @@ const SelectData = () => {
                     ))}
                 </select>
             </div>
-            <div className="mb-3 col-lg-4">
+            <div className="col-lg-4 mb-sm-3">
                 <select
                     className="form-select"
                     aria-label="Departamento"
@@ -34,9 +34,9 @@ const SelectData = () => {
                     ))}
                 </select>
             </div>
-            <div className="mb-3 col-lg-4">
+            <div className="col-lg-4 mb-sm-3">
                 <select
-                    className="form-select mb-3 col-lg-4"
+                    className="form-select col-lg-4"
                     aria-label="Ciudad"
                     disabled={departamento === 0}
                 >

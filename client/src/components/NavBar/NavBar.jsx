@@ -46,7 +46,7 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item">
                             <NavLink
-                                to="/contac"
+                                to="/contact"
                                 className={(isActive) =>
                                     "nav-link" +
                                     (!isActive ? " unselected" : "")
