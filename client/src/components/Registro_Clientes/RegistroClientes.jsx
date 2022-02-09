@@ -11,22 +11,30 @@ const RegistroClientes = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target[0].value);
-        console.log(e.target[1].value);
-        console.log(e.target[2].value);
-        console.log(e.target[3].value);
-        console.log(e.target[4].value);
-        console.log(e.target[5].value);
-        console.log(e.target[6].value);
-        console.log(e.target[7].value);
-        console.log(e.target[8].value);
-        console.log(e.target[9].value);
-        console.log(e.target[10].value);
-        console.log(e.target[11].value);
-        console.log(e.target[12].value);
-        console.log(e.target[13].value);
-        console.log(e.target[14].value);
-        dispatch(login())
+        
+        const data = {
+            nombre: e.target[0].value,
+            email: e.target[1].value,
+            password: e.target[2].value,
+            direccion: e.target[3].value,
+            telefono1: e.target[4].value,
+            telefono2: e.target[5].value,
+            whatsapp: e.target[6].value,
+            telegram: e.target[7].value,
+            facebook: e.target[8].value,
+            instagram: e.target[9].value,
+            twitter: e.target[10].value,
+            linkedin: e.target[11].value,
+            categoria: e.target[12].value,
+            departamento: e.target[13].value,
+            ciudad: e.target[14].value,
+            msg_description: e.target[15].value,
+        }
+        const data2 = {
+            email: e.target[1].value,
+            password: e.target[2].value,
+        }
+        dispatch(login(data2))
     };
 
     return (

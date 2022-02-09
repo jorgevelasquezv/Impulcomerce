@@ -13,7 +13,7 @@ const Home = () => {
             <Carousel />
             <SearchBar loadProveedores={loadProveedores} />
             <div className="container">
-                <div className="row">
+                <div className="row justify-content-center">
                     {emprendedores ?
                         emprendedores.map((emprendedor) => (
                             <Card key={emprendedor._id} data={emprendedor} />
