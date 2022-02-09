@@ -2,8 +2,13 @@ import React from 'react';
 
 import { inputs } from './elements';
 import SelectData from '../SelectData/SelectData';
+import { useDispatch } from 'react-redux';
+import { login } from '../../actions/authActions';
 
 const RegistroClientes = () => {
+
+    const dispatch = useDispatch()
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(e.target[0].value);
@@ -21,6 +26,7 @@ const RegistroClientes = () => {
         console.log(e.target[12].value);
         console.log(e.target[13].value);
         console.log(e.target[14].value);
+        dispatch(login())
     };
 
     return (
